@@ -1,7 +1,9 @@
+<!---
 ---
 title: SOMATIC VARIANT DETECTION IN CANCER GENOME
 
 ---
+--->
 
 ![aceLogo](https://hackmd.io/_uploads/Bk0UcfrtC.png)
 

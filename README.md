@@ -1,18 +1,12 @@
-<!---
----
-title: SOMATIC VARIANT DETECTION IN CANCER GENOME
-
----
---->
 <div align="center">
   <img src="https://hackmd.io/_uploads/Bk0UcfrtC.png" alt="Image" width="3000"/>
 </div>
 
-# <div align="center">**SOMATIC VARIANT DETECTION IN CANCER GENOME**</div> 
+# <div align="center"> **SOMATIC VARIANT DETECTION IN CANCER GENOME** </div>
 ### Background
 On 29th November, 2023 members of the ACE Cancer Genomics Working Group agreed on building a custom variant calling pipeline which was to be curated, documented and finally adopted by the members of the group for use. We tested two popular tools (Vascan and GATK) used for variant calling as documented in this [PAPER](https://doi.org/10.1007/978-1-4939-8876-1_21).
 The main objective was to build a scableble, automated and well documented variant calling pipeline for our daily use.
--
+
 
 ## :feet: **STEP1A:** Sample Acquisition
 Samples.txt file was created with all the accession numbers of the samples in BioProject [PRJNA851929](https://www.ebi.ac.uk/ena/browser/view/PRJNA851929). The samples of tumor tissue were obtained from needle biopsy while the non tumor tissue were obtained from mononuclear cells isolated by Ficoll-gradient from EDTA-anticoagulated whole blood extracted at diagnosis and preserved at -80C.
@@ -105,7 +99,6 @@ Popular tools for **RNA** alignment include;
 
 We used **BWA** for this pipeline since were dealing with DNA sequences and also the added advantages of BWA over other tools such as its speed, accuracy and efficiency in handling short reads.
 
-:::info
 **BWA** is a software package for mapping low-divergent sequences against a large reference genome, such as the human genome. 
 It consists of three algorithms: **BWA-backtrack**, **BWA-SW** and **BWA-MEM**. 
 The first algorithm is designed for Illumina sequence reads up to 100bp, while the rest two for longer sequences ranged from 70bp to 1Mbp. 
@@ -113,7 +106,6 @@ BWA-MEM and BWA-SW share similar features such as long-read support and split al
 BWA-MEM also has better performance than BWAbacktrack for 70-100bp Illumina reads.
 
 We shall therefore use **BWA MEM** to perform alignment.
-:::
 
 Before performing the alignment, the reference must first be **Indexed**. This enables fast, efficient, and accurate alignment of sequencing reads by creating a searchable data structure that optimizes memory usage and computational load. This is done using **bwa index** command below.
 ```bash
@@ -151,9 +143,7 @@ samtools view -h ./bams/normal.bam | head -n4
 ![image](https://hackmd.io/_uploads/SkentfBKC.png)
 
 The next step is to index the output bam after sorting it. 
-:::info
 Sorting a bam file is to organize the aligned reads either by their genomic coordinates or by read names, which is essential for downstream analyses such as duplicate marking, variant calling, and efficient data retrieval.
-:::
 ```bash
 for id in $(cat samples.txt)
 do
@@ -161,9 +151,7 @@ do
 done
 ```
 After sorting the bam files we then index them.
-:::info
 Indexing sorted bam files enables quick retrieval of specific regions of the genome, significantly speeding up data access and enabling efficient querying of aligned sequencing data. We also generated the alignment summary statistics for the bam files using **Samtools FlagStat** command
-:::
 ```bash
 for id in $(cat samples.txt)
 do

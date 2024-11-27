@@ -75,6 +75,8 @@ wget https://snpeff.blob.core.windows.net/versions/snpEff_latest_core.zip
 
 unzip snpEff_latest_core.zip
 
+rm -rf snpEff_latest_core.zip gatk-4.2.2.0.zip
+
 # If everything in this file is set successfully, go ahead and edit the 'OncoVarDetect.slurm.sh' file and proceed to run
 # Ensure both 'OncoVarDetect.slurm.sh' and 'OncoVarDetect.sh' files are in the same directory.
 

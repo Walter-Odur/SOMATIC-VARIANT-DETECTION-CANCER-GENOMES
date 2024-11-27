@@ -32,9 +32,9 @@ then
                 fastp=0.23 \
                 bwa=0.7 \
                 samtools=1.21 \
-                bcftools=1.21 
-                
-        mamba activate gatk        
+                bcftools=1.21
+
+        mamba activate gatk
 
 elif command -v conda &> /dev/null;
 then
@@ -50,14 +50,15 @@ then
                 fastp=0.23 \
                 bwa=0.7 \
                 samtools=1.21 \
-                bcftools=1.21 
-                
-        conda activate gatk        
+                bcftools=1.21
+
+        conda activate gatk
 else
-        echo "OOPs..! miniconda/anaconda/micromamba not installed. Please install miniconda using the following commands and try again!"
-        echo '
-wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && bash Miniforge3-Linux-x86_64.sh'
-        
+        echo "
+OOPs..! miniconda/anaconda/micromamba not installed. Please install miniconda using the following commands and try again!
+wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh && bash Miniforge3-Linux-x86_64.sh
+"
+
         exit 1
 fi
 

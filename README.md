@@ -48,7 +48,7 @@ Trimming sequence data is often performed after running FastQC to improve read q
 * **Adapter trimming:** Identifies and removes adapter sequences that may be present at the ends of reads.
 * **Length-based trimming:** Removes reads that are shorter or longer than a specified length.
 
-**Popular Trimming Tools include:**
+**Popular Trimming Tools Include:**
 
 * **[Trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic)**
 * **[Cutadapt](https://cutadapt.readthedocs.io/en/stable/guide.html)**
